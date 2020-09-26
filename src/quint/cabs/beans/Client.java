@@ -11,13 +11,15 @@ public class Client {
 
 	private int clientId;
 	
-	private int x;
+	private double x;
 	
-	private int y;
+	private double y;
 	
-	private int destinationX;
+	private double destinationX;
 	
-	private int destinationY;
+	private double destinationY;
+	
+	private String cabType;
 
 	/**
 	 * @return the clientId
@@ -36,57 +38,71 @@ public class Client {
 	/**
 	 * @return the x
 	 */
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
 	/**
 	 * @param x the x to set
 	 */
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
 	/**
 	 * @return the y
 	 */
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
 	/**
 	 * @param y the y to set
 	 */
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
 	/**
 	 * @return the destinationX
 	 */
-	public int getDestinationX() {
+	public double getDestinationX() {
 		return destinationX;
 	}
 
 	/**
 	 * @param destinationX the destinationX to set
 	 */
-	public void setDestinationX(int destinationX) {
+	public void setDestinationX(double destinationX) {
 		this.destinationX = destinationX;
 	}
 
 	/**
 	 * @return the destinationY
 	 */
-	public int getDestinationY() {
+	public double getDestinationY() {
 		return destinationY;
 	}
 
 	/**
 	 * @param destinationY the destinationY to set
 	 */
-	public void setDestinationY(int destinationY) {
+	public void setDestinationY(double destinationY) {
 		this.destinationY = destinationY;
+	}
+
+	/**
+	 * @return the cabType
+	 */
+	public String getCabType() {
+		return cabType;
+	}
+
+	/**
+	 * @param cabType the cabType to set
+	 */
+	public void setCabType(String cabType) {
+		this.cabType = cabType;
 	}
 	
 
