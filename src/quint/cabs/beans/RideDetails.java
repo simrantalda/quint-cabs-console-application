@@ -11,19 +11,19 @@ public class RideDetails {
 
 	/** cabId */
 	private int cabId;
-	
+
 	/** clientId */
 	private int clientId;
-	
+
 	/** distance */
 	private double distance;
-	
+
 	/** timeTaken */
 	private double timeTaken;
-	
+
 	/** carType */
 	private String carType;
-	
+
 	/** cost */
 	private double cost;
 
@@ -35,7 +35,8 @@ public class RideDetails {
 	}
 
 	/**
-	 * @param cabId the cabId to set
+	 * @param cabId
+	 *            the cabId to set
 	 */
 	public void setCabId(int cabId) {
 		this.cabId = cabId;
@@ -49,7 +50,8 @@ public class RideDetails {
 	}
 
 	/**
-	 * @param clientId the clientId to set
+	 * @param clientId
+	 *            the clientId to set
 	 */
 	public void setClientId(int clientId) {
 		this.clientId = clientId;
@@ -63,7 +65,8 @@ public class RideDetails {
 	}
 
 	/**
-	 * @param distance the distance to set
+	 * @param distance
+	 *            the distance to set
 	 */
 	public void setDistance(double distance) {
 		this.distance = distance;
@@ -77,7 +80,8 @@ public class RideDetails {
 	}
 
 	/**
-	 * @param timeTaken the timeTaken to set
+	 * @param timeTaken
+	 *            the timeTaken to set
 	 */
 	public void setTimeTaken(double timeTaken) {
 		this.timeTaken = timeTaken;
@@ -91,7 +95,8 @@ public class RideDetails {
 	}
 
 	/**
-	 * @param carType the carType to set
+	 * @param carType
+	 *            the carType to set
 	 */
 	public void setCarType(String carType) {
 		this.carType = carType;
@@ -105,13 +110,11 @@ public class RideDetails {
 	}
 
 	/**
-	 * @param cost the cost to set
+	 * @param cost
+	 *            the cost to set
 	 */
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
-	
-	
-	
-	
+
 }

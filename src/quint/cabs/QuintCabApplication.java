@@ -7,6 +7,10 @@ import quint.cabs.beans.Client;
 import quint.cabs.beans.RideDetails;
 import quint.cabs.implementations.QuintCabsService;
 
+/**
+ * @author Simran Talda
+ *
+ */
 public class QuintCabApplication {
 
 	/**
@@ -17,28 +21,30 @@ public class QuintCabApplication {
 
 		try (// Get Clients
 				Scanner in = new Scanner(System.in)) {
-			System.out.print("Enter Cleint Details");
-			System.out.print("Enter Cleint id");
-			Client c = new Client();
-			c.setClientId(in.nextInt());
-			System.out.print("Enter current x and y");
-			c.setX(in.nextDouble());
-			c.setY(in.nextDouble());
-			System.out.print("Enter destination x and y");
-			c.setDestinationX(in.nextDouble());
-			c.setDestinationY(in.nextDouble());
-			System.out.print("Do you want pink cab? (NORMAL/PINK)");
-			c.setCabType(in.next());
+			do {
+				System.out.print("Enter Cleint Details");
+				System.out.print("Enter Cleint id");
+				Client c = new Client();
+				c.setClientId(in.nextInt());
+				System.out.print("Enter current x and y");
+				c.setX(in.nextDouble());
+				c.setY(in.nextDouble());
+				System.out.print("Enter destination x and y");
+				c.setDestinationX(in.nextDouble());
+				c.setDestinationY(in.nextDouble());
+				System.out.print("Do you want pink cab? (NORMAL/PINK)");
+				c.setCabType(in.next());
 
-			// processRequest
-			QuintCabsService service = new QuintCabsService();
-			RideDetails ride = service.processRequest(c);
-			//showCabDetails(cab);			
-			showRideDetails(ride);
-			System.out.print("Do you wish to Proceed? (Y/N)");
-			if(in.next().equals("Y")) {
-				//Start ride  --------
-			}			
+				// processRequest
+				QuintCabsService service = new QuintCabsService();
+				RideDetails ride = service.processRequest(c);
+				// showCabDetails(cab);
+				showRideDetails(ride);
+				System.out.print("Do you wish to Proceed? (Y/N)");
+				if (in.next().equals("Y")) {
+					service.startRide(ride);
+				}
+			} while (in.next().equals("END_NOW"));
 		}
 
 		// find nearest cab
@@ -47,6 +53,11 @@ public class QuintCabApplication {
 
 	}
 
+	/**
+	 * showRideDetails - get ride deatils
+	 * 
+	 * @param ride
+	 */
 	public static void showRideDetails(RideDetails ride) {
 		System.out.print("Here is your ride !!!");
 		System.out.println("Cab No - " + ride.getCabId());
@@ -56,6 +67,7 @@ public class QuintCabApplication {
 
 	/**
 	 * showCabDetails
+	 * 
 	 * @param cab
 	 */
 	public static void showCabDetails(Cab cab) {

@@ -5,9 +5,13 @@ package quint.cabs.implementations;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import quint.cabs.async.RideExecutor;
 import quint.cabs.beans.Cab;
 import quint.cabs.beans.Client;
 import quint.cabs.beans.RideDetails;
+import quint.cabs.utils.CabStatus;
+import quint.cabs.utils.RideType;
 
 /**
  * @author Simran Talda
@@ -28,7 +32,7 @@ public class QuintCabsService {
 		// filter only avaiable cabs
 		// for future scaling we can filter cabs avaiable in particular radius
 		cabs = cabs.stream()
-				.filter(cab -> cab.getStatus().equals("AVAILABLE")
+				.filter(cab -> cab.getStatus().equals(CabStatus.AVAILABLE.getCabStatus())
 						&& cab.getCabType().equals(c.getCabType()))
 				.collect(Collectors.toList());
 		// find nearest cab
@@ -79,10 +83,10 @@ public class QuintCabsService {
 		} else {
 			cost = InitialSetup.getCostPerKm();
 		}
-		if(cab.getCabType() == "PINK") {
-			cost+= InitialSetup.getAdditionalCost();
+		if (cab.getCabType() == RideType.PINK.getRideType()) {
+			cost += InitialSetup.getAdditionalCost();
 		}
-		
+
 		ride.setCost(cost);
 
 		return ride;
@@ -104,6 +108,25 @@ public class QuintCabsService {
 		double term2 = (cabY - clientY) * (cabY - clientY);
 		double sum = term1 + term2;
 		return Math.abs(Math.sqrt(sum));
+	}
+
+	/**
+	 * startRide - pre-ride process
+	 * 
+	 * @param ride
+	 */
+	public void startRide(RideDetails ride) {
+		List<Cab> cabs = InitialSetup.loadCabs();
+		cabs = cabs.stream().filter(cab -> cab.getCabId() == ride.getCabId())
+				.collect(Collectors.toList());
+		if (!cabs.isEmpty()) {
+			Cab selectedCab = cabs.get(0);
+			selectedCab.setStatus(CabStatus.RIDING.getCabStatus());
+			RideExecutor rideExecutor = new RideExecutor();
+			rideExecutor.startRide((int) Math.round(ride.getTimeTaken()),
+					selectedCab, ride.getCost());
+		}
+
 	}
 
 }

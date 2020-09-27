@@ -128,7 +128,12 @@ public class Cab {
 		this.pointsEarned = pointsEarned;
 		this.cabType = cabType;
 	}
-	
-	
+
+	/**
+	 * 
+	 */
+	public Cab() {
+		super();
+	}
 
 }
