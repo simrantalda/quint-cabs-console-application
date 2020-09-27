@@ -43,7 +43,7 @@ public class QuintCabApplication {
 					showRideDetails(ride);
 					System.out.print("Do you wish to Proceed? (Y/N)");
 					if (in.next().equals("Y")) {
-						service.startRide(ride);
+						service.startRide(ride, c.getDestinationX(),c.getDestinationY());
 					}
 				} else {
 					System.out.print("Sorry!! no rides avaiable ");

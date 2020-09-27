@@ -114,8 +114,10 @@ public class QuintCabsService {
 	 * startRide - pre-ride process
 	 * 
 	 * @param ride
+	 * @param destinationY 
+	 * @param destinationX 
 	 */
-	public void startRide(RideDetails ride) {
+	public void startRide(RideDetails ride, double destinationX, double destinationY) {
 		List<Cab> cabs = InitialSetup.loadCabs();
 		cabs = cabs.stream().filter(cab -> cab.getCabId() == ride.getCabId())
 				.collect(Collectors.toList());
@@ -124,7 +126,7 @@ public class QuintCabsService {
 			selectedCab.setStatus(CabStatus.RIDING.getCabStatus());
 			final RideExecutor rideExecutor = new RideExecutor();
 			rideExecutor.startRide((int) Math.round(ride.getTimeTaken()),
-					selectedCab, ride.getCost());
+					selectedCab, ride.getCost(), destinationX, destinationY);
 		}
 
 	}
