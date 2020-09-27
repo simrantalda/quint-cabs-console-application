@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import quint.cabs.beans.Cab;
 import quint.cabs.beans.Client;
+import quint.cabs.beans.RideDetails;
 import quint.cabs.implementations.QuintCabsService;
 
 public class QuintCabApplication {
@@ -26,13 +27,18 @@ public class QuintCabApplication {
 			System.out.print("Enter destination x and y");
 			c.setDestinationX(in.nextDouble());
 			c.setDestinationY(in.nextDouble());
-			System.out.print("Do you want pink cab");
-			c.setCabType(in.nextLine());
+			System.out.print("Do you want pink cab? (NORMAL/PINK)");
+			c.setCabType(in.next());
 
 			// processRequest
 			QuintCabsService service = new QuintCabsService();
-			Cab cab = service.processRequest(c);
-			showCabDetails(cab);
+			RideDetails ride = service.processRequest(c);
+			//showCabDetails(cab);			
+			showRideDetails(ride);
+			System.out.print("Do you wish to Proceed? (Y/N)");
+			if(in.next().equals("Y")) {
+				//Start ride  --------
+			}			
 		}
 
 		// find nearest cab
@@ -41,11 +47,18 @@ public class QuintCabApplication {
 
 	}
 
+	public static void showRideDetails(RideDetails ride) {
+		System.out.print("Here is your ride !!!");
+		System.out.println("Cab No - " + ride.getCabId());
+		System.out.println("Time Estimated  - " + ride.getTimeTaken());
+		System.out.println("Cos Estimated - " + ride.getCost());
+	}
+
 	/**
 	 * showCabDetails
 	 * @param cab
 	 */
-	private static void showCabDetails(Cab cab) {
+	public static void showCabDetails(Cab cab) {
 		System.out.print("Here is your ride !!!");
 		System.out.println("Cab No - " + cab.getCabId());
 		System.out.println(

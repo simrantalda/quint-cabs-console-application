@@ -5,7 +5,7 @@ import java.util.List;
 import quint.cabs.beans.Cab;
 
 /**
- * @author LENOVO
+ * @author Simran Talda
  *
  */
 public class InitialSetup {
@@ -29,6 +29,22 @@ public class InitialSetup {
 		cabs.add(new Cab(1, 2.07, 8.08, "AVAILABLE", 0, "NORMAL"));
 
 		return cabs;
+	}
+	
+	public static double getBasicSpeed() {
+		return 40;
+	}
+	
+	public static double getCostPerMinute() {
+		return 1;
+	}
+	
+	public static double getCostPerKm() {
+		return 2;
+	}
+	
+	public static double getAdditionalCost() {
+		return 5;
 	}
 
 }

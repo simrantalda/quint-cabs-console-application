@@ -4,7 +4,7 @@
 package quint.cabs.beans;
 
 /**
- * @author LENOVO
+ * @author Simran Talda
  *
  */
 public class Client {
