@@ -24,7 +24,7 @@ public class QuintCabApplication {
 			do {
 				System.out.print("Enter Cleint Details");
 				System.out.print("Enter Cleint id");
-				Client c = new Client();
+				final Client c = new Client();
 				c.setClientId(in.nextInt());
 				System.out.print("Enter current x and y");
 				c.setX(in.nextDouble());
@@ -36,8 +36,8 @@ public class QuintCabApplication {
 				c.setCabType(in.next());
 
 				// processRequest
-				QuintCabsService service = new QuintCabsService();
-				RideDetails ride = service.processRequest(c);
+				final QuintCabsService service = new QuintCabsService();
+				final RideDetails ride = service.processRequest(c);
 				// showCabDetails(cab);
 				if (ride != null) {
 					showRideDetails(ride);

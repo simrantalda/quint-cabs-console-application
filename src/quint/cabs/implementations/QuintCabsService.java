@@ -74,7 +74,7 @@ public class QuintCabsService {
 	 */
 	public RideDetails setRideDetails(Cab cab, double minDistance) {
 		// set ride details
-		RideDetails ride = new RideDetails();
+		final RideDetails ride = new RideDetails();
 		ride.setCabId(cab.getCabId());
 		double cost = 0;
 		ride.setTimeTaken(minDistance / InitialSetup.getBasicSpeed());
@@ -104,9 +104,9 @@ public class QuintCabsService {
 	 */
 	public double knnAlgorithm(double clientX, double clientY, double cabX,
 			double cabY) {
-		double term1 = (cabX - clientX) * (cabX - clientX);
-		double term2 = (cabY - clientY) * (cabY - clientY);
-		double sum = term1 + term2;
+		final double term1 = (cabX - clientX) * (cabX - clientX);
+		final double term2 = (cabY - clientY) * (cabY - clientY);
+		final double sum = term1 + term2;
 		return Math.abs(Math.sqrt(sum));
 	}
 
@@ -120,9 +120,9 @@ public class QuintCabsService {
 		cabs = cabs.stream().filter(cab -> cab.getCabId() == ride.getCabId())
 				.collect(Collectors.toList());
 		if (!cabs.isEmpty()) {
-			Cab selectedCab = cabs.get(0);
+			final Cab selectedCab = cabs.get(0);
 			selectedCab.setStatus(CabStatus.RIDING.getCabStatus());
-			RideExecutor rideExecutor = new RideExecutor();
+			final RideExecutor rideExecutor = new RideExecutor();
 			rideExecutor.startRide((int) Math.round(ride.getTimeTaken()),
 					selectedCab, ride.getCost());
 		}

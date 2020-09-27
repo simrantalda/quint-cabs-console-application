@@ -16,7 +16,7 @@ public class InitialSetup {
 	 * loadCabs - fetch records from db (for now adding adding stubs)
 	 */
 	public static List<Cab> loadCabs() {
-		List<Cab> cabs = new ArrayList<>();
+		final List<Cab> cabs = new ArrayList<>();
 		cabs.add(new Cab(1, 9.07, 5.0, CabStatus.AVAILABLE.getCabStatus(), 0,
 				RideType.NORMAL.getRideType()));
 		cabs.add(new Cab(1, 8.999, 7.90, CabStatus.AVAILABLE.getCabStatus(), 0,

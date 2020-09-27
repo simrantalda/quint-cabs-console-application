@@ -22,9 +22,9 @@ public class RideExecutor {
 	 * @param cost
 	 */
 	public void startRide(int estimatedTime, Cab cab, double cost) {
-		ScheduledExecutorService scheduler = Executors
+		final ScheduledExecutorService scheduler = Executors
 				.newSingleThreadScheduledExecutor();
-		Runnable task = new Runnable() {
+		final Runnable task = new Runnable() {
 			public void run() {
 				cab.setStatus(CabStatus.AVAILABLE.getCabStatus());
 				cab.setPointsEarned(cab.getPointsEarned() + cost);
