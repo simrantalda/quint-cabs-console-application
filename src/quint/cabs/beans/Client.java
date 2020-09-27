@@ -9,16 +9,22 @@ package quint.cabs.beans;
  */
 public class Client {
 
+	/** clientId */
 	private int clientId;
-	
+
+	/** x */
 	private double x;
-	
+
+	/** y */
 	private double y;
-	
+
+	/** destinationX */
 	private double destinationX;
-	
+
+	/** destinationY */
 	private double destinationY;
-	
+
+	/** cabType */
 	private String cabType;
 
 	/**
@@ -29,7 +35,8 @@ public class Client {
 	}
 
 	/**
-	 * @param clientId the clientId to set
+	 * @param clientId
+	 *            the clientId to set
 	 */
 	public void setClientId(int clientId) {
 		this.clientId = clientId;
@@ -43,7 +50,8 @@ public class Client {
 	}
 
 	/**
-	 * @param x the x to set
+	 * @param x
+	 *            the x to set
 	 */
 	public void setX(double x) {
 		this.x = x;
@@ -57,7 +65,8 @@ public class Client {
 	}
 
 	/**
-	 * @param y the y to set
+	 * @param y
+	 *            the y to set
 	 */
 	public void setY(double y) {
 		this.y = y;
@@ -71,7 +80,8 @@ public class Client {
 	}
 
 	/**
-	 * @param destinationX the destinationX to set
+	 * @param destinationX
+	 *            the destinationX to set
 	 */
 	public void setDestinationX(double destinationX) {
 		this.destinationX = destinationX;
@@ -85,7 +95,8 @@ public class Client {
 	}
 
 	/**
-	 * @param destinationY the destinationY to set
+	 * @param destinationY
+	 *            the destinationY to set
 	 */
 	public void setDestinationY(double destinationY) {
 		this.destinationY = destinationY;
@@ -99,11 +110,11 @@ public class Client {
 	}
 
 	/**
-	 * @param cabType the cabType to set
+	 * @param cabType
+	 *            the cabType to set
 	 */
 	public void setCabType(String cabType) {
 		this.cabType = cabType;
 	}
-	
 
 }

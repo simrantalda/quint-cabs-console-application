@@ -4,13 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 import quint.cabs.beans.Cab;
 
+/**
+ * @author LENOVO
+ *
+ */
 public class InitialSetup {
-	
-	public static List<Cab>  loadCabs() {
-		List<Cab> cabs = new ArrayList<>();		
-		return cabs;		
+
+	/**
+	 * loadCabs - fetch records from db (for now adding adding stubs)
+	 */
+	public static List<Cab> loadCabs() {
+		List<Cab> cabs = new ArrayList<>();
+		cabs.add(new Cab(1, 9.07, 5.0, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 8.999, 7.90, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 5.07, 8.90, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 7.07, 6.90, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 8.07, 9.0, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 9.07, 8.90, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 5.07, 6.50, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 6.07, 4.40, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 4.07, 3.05, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 9.07, 7.07, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 8.07, 9.07, "AVAILABLE", 0, "NORMAL"));
+		cabs.add(new Cab(1, 2.07, 8.08, "AVAILABLE", 0, "NORMAL"));
+
+		return cabs;
 	}
-	
-	
 
 }

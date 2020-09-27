@@ -2,17 +2,22 @@ package quint.cabs.beans;
 
 public class Cab {
 
-	/** */
+	/** cabId */
 	private int cabId;
-	
+
+	/** x */
 	private double x;
-	
+
+	/** y */
 	private double y;
-	
+
+	/** status */
 	private String status;
-	
+
+	/** pointsEarned */
 	private double pointsEarned;
-	
+
+	/** cabType */
 	private String cabType;
 
 	/**
@@ -23,7 +28,8 @@ public class Cab {
 	}
 
 	/**
-	 * @param cabId the cabId to set
+	 * @param cabId
+	 *            the cabId to set
 	 */
 	public void setCabId(int cabId) {
 		this.cabId = cabId;
@@ -37,7 +43,8 @@ public class Cab {
 	}
 
 	/**
-	 * @param x the x to set
+	 * @param x
+	 *            the x to set
 	 */
 	public void setX(double x) {
 		this.x = x;
@@ -51,7 +58,8 @@ public class Cab {
 	}
 
 	/**
-	 * @param y the y to set
+	 * @param y
+	 *            the y to set
 	 */
 	public void setY(double y) {
 		this.y = y;
@@ -65,7 +73,8 @@ public class Cab {
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param status
+	 *            the status to set
 	 */
 	public void setStatus(String status) {
 		this.status = status;
@@ -79,7 +88,8 @@ public class Cab {
 	}
 
 	/**
-	 * @param pointsEarned the pointsEarned to set
+	 * @param pointsEarned
+	 *            the pointsEarned to set
 	 */
 	public void setPointsEarned(double pointsEarned) {
 		this.pointsEarned = pointsEarned;
@@ -93,13 +103,32 @@ public class Cab {
 	}
 
 	/**
-	 * @param cabType the cabType to set
+	 * @param cabType
+	 *            the cabType to set
 	 */
 	public void setCabType(String cabType) {
 		this.cabType = cabType;
 	}
 
+	/**
+	 * @param cabId
+	 * @param x
+	 * @param y
+	 * @param status
+	 * @param pointsEarned
+	 * @param cabType
+	 */
+	public Cab(int cabId, double x, double y, String status,
+			double pointsEarned, String cabType) {
+		super();
+		this.cabId = cabId;
+		this.x = x;
+		this.y = y;
+		this.status = status;
+		this.pointsEarned = pointsEarned;
+		this.cabType = cabType;
+	}
+	
+	
 
-	
-	
 }
