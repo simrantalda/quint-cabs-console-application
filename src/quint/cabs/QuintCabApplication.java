@@ -39,11 +39,16 @@ public class QuintCabApplication {
 				QuintCabsService service = new QuintCabsService();
 				RideDetails ride = service.processRequest(c);
 				// showCabDetails(cab);
-				showRideDetails(ride);
-				System.out.print("Do you wish to Proceed? (Y/N)");
-				if (in.next().equals("Y")) {
-					service.startRide(ride);
+				if (ride != null) {
+					showRideDetails(ride);
+					System.out.print("Do you wish to Proceed? (Y/N)");
+					if (in.next().equals("Y")) {
+						service.startRide(ride);
+					}
+				} else {
+					System.out.print("Sorry!! no rides avaiable ");
 				}
+
 			} while (in.next().equals("END_NOW"));
 		}
 
